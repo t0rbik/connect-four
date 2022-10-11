@@ -36,58 +36,71 @@ const theme = createTheme({
 export const PrimaryButton = styled(Button, {
   border: 0,
   boxShadow: "0px 14px 24px rgb(36 36 255 / 14%)",
-  padding: "17px 33.5px",
   borderRadius: "14px",
-  fontSize: "14px",
-  lineHeight: "21.86px",
-  fontWeight: 600,
   variants: {
+    size: {
+      celsia: {
+        padding: "17px 33.5px",
+        fontSize: "14px",
+        lineHeight: "21.86px",
+        fontWeight: 600,
+        height: "fit-content",
+      },
+    },
     color: {
       celsia: {
         background: "$primary",
         color: "$white",
-        "&:hover": {
-          background: "$green100",
-          color: "$green800",
-        },
-        "&:active": {
-          background: "$green200",
-        },
+        "&:hover": {},
         "&:focus": {
-          borderColor: "$green400",
+          outline: "1px solid $black",
+          outlineOffset: "1px",
         },
+        "&:active": {},
       },
     },
   },
 });
 
 export const SecondaryButton = styled(Button, {
-  boxShadow: "$md",
+  boxShadow: "none",
+  borderRadius: "14px",
+  border: "1px solid #e6e6ed",
   variants: {
     size: {
-      mysize: {
-        height: "$12",
-        borderRadius: "$xs",
+      celsia: {
+        padding: "17px 38px",
+        fontSize: "14px",
+        lineHeight: "21.86px",
+        fontWeight: 600,
+        height: "fit-content",
       },
     },
     color: {
-      mycolor: {
-        background: "$green800",
-        color: "$green100",
-        border: "$space$1 solid transparent",
+      celsia: {
+        background: "transparent",
+        color: "$primary",
         "&:hover": {
-          background: "$green100",
-          color: "$green800",
-        },
-        "&:active": {
-          background: "$green200",
+          borderColor: "$primary",
         },
         "&:focus": {
-          borderColor: "$green400",
+          outline: "1px solid $black",
+          outlineOffset: "1px",
         },
+        "&:active": {},
       },
     },
   },
+});
+
+export const Row = styled("div", {
+  display: "flex",
+  flexDirection: "row",
+});
+
+export const Col = styled("div", {
+  display: "flex",
+  flexDirection: "column",
 });
 
 export default theme;
